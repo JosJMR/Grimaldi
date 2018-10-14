@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\title{Ejcicios de Grimaldi}
+\author{Josias Jacob Martinez Rojas }
+\date{October 2018}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsmath}
+\begin{document}
+\maketitle
+
+\section{Capitulo 6}Lenguajes: Máquinas de estados finitos.\\
+1.- Para lasumatoria de (w, x, y, z)
+determine el número de cadenas de la  sumatoria de longitud cinco (a) que comienzan con w; (b) con precisamente dos w; (c) sin w; (d) con un numero par de w. \\
+\textcolor{red}{Respuesta: Consideremos que la sumatoria contiene 4 terminos:\\ (a) $4^4$ \\
+(b) $C(5,2)(3^3)$\\
+(c) $3^5$ \\
+(d) $3^5$ + $C(5,2)(3^3)$ + $C(5,4)(3)$
+}
+
+\\
+2.- Si x pertenece a la  sumatoria de longitudes y $x^3=36$, ¿Cuánto vale el valor absoluto de x? \\
+\textcolor{red}{ Respuesta:  $x = 12$ }
+\\
+3.- Sea $sumatoria= {v, w, x, y, z}$ y $A= U^6 n=1$ $sumatoria ^n$. ¿Cuántas cadenas de A tienen a xy como prefijo propio? \\
+\textcolor{red}{Respuesta :  De $i=1$ hasta 4 es la $sumatoria 5^i$
+}
+\\
+4.- Sea  sumatoria un alfabeto. Sea xi $\in$ sumatoria para  1 $\leq$ i $\leq$ 100 (donde xi es diferente que xj, para cualquier  1 $\leq$ j $\leq$ 100). ¿Cuántas subcadenas no vacias existen para la cadena $s= x1x2...x100$?  \\
+\textcolor{red}{Respuesta: Hay 100 subcadenas de longitud 1, 99 subcadenas de longitud 2, 1 subcadena de longitud 100, asi que tenemos 100 + 99 + ...+ 1 = De i=1 hasta 100 sumatoria de i = (100)(101)/2 =5050 subcadenas no vacias en total }
+\\
+5.- Para el alfabeto sumatoria =(0,1), sean A, B, C $\subseteq$ sumatoria los siguientes lenguajes:
+A= (0, 1, 00, 11, 000, 111, 0000, 1111),\\
+B= (w $\in$ sumatoria 2 $\leq$ w)\\
+C= (w $\in$ sumatoria 2 $\geq$ w)
+Determine los siguientes subconjuntos(lenguajes) de sumatoria\\
+a) A $\cap$ B\\
+b) A - B \\
+c) A $\bigtriangleup$ B\\
+d) A $\cap$ C \\ 
+e) B $\cap$ C \\
+f) B $\cup$ C 
+\\
+\textcolor{red}{Respuesta: 
+a) (00,111,000,111,0000,1111)\\
+b) (0,1) \\
+c) sumatoria* -($\lambda$,00,11,000,111,0000,1111)\\
+d) (0,1,00,11) \\ 
+e) sumatoria* \\
+f) sumatoria* - (0,1,00,11)= ($\lambda$,01,10) $\cup$ ( w $\geq$ 3 )
+}
+\\
+6.- Con la máquina de estados finitos determine la salida para cada una de las siguientes entradas xE , así como el ultimo estado interno en el proceso de transición. (Suponga que siempre partimos del estado So.)\\
+a) X=1010101		b) x=1001001		c) x=101001000\\
+\textcolor{red}{Respuesta=	 a) 0010101		b) 0000000		c) 0010000000}
+\\
+7.- Para la máquina de estados finitos del ejemplo 6.18 una cadena de entrada x produce la cadena de salida 00101, si partimos del estado So Determine x.\\ 
+\textcolor{red}{Respuesta: x=10101}
+\\
+8.- Proporcione la tabla de estados para la máquina expendedora del ejemplo 6.19, si el costo de cada lata de cola o de cerveza de raíz se incrementa a 25 centavos.\\
+\textcolor{red}{Respuesta:
+\begin{center}
+   \begin{tabular}{ l | c | r | }
+     \hline
+       & v & w\\ \hline
+       & 5c\hspace{.5cm} 10c\hspace{.5cm} 25c\hspace{.5cm} B \hspace{.5cm} W & 5c\hspace{.5cm} 10c\hspace{.5cm} 25c\hspace{.5cm} B\hspace{.5cm} W \\ \hline
+     S0 & S1\hspace{.5cm}S2\hspace{.5cm}S5\hspace{.5cm}S0\hspace{.5cm}S0& n\hspace{.5cm}n\hspace{.5cm}n\hspace{.5cm}n\hspace{.5cm}n \\ \hline
+     S1 & S2\hspace{.5cm}S3\hspace{.5cm}S5\hspace{.5cm}S1\hspace{.5cm}S1\hspace{.5cm}&n\hspace{.5cm}n\hspace{.5cm}5c\hspace{.5cm}n\hspace{.5cm}n\\ \hline
+     S2 & S3\hspace{.5cm}S4\hspace{.5cm}S5\hspace{.5cm}S2\hspace{.5cm}S2\hspace{.5cm}&n\hspace{.5cm}n\hspace{.5cm}10c\hspace{.5cm}n\hspace{.5cm}n\\ \hline
+     S3 & S4\hspace{.5cm}S5\hspace{.5cm}S5\hspace{.5cm}S3\hspace{.5cm}S3\hspace{.5cm}&n\hspace{.5cm}n\hspace{.5cm}15c\hspace{.5cm}n\hspace{.5cm}n\\ \hline
+     S4 & S5\hspace{.5cm}S5\hspace{.5cm}S5\hspace{.5cm}S4\hspace{.5cm}S4\hspace{.5cm}&n\hspace{.5cm}5c\hspace{.5cm}20c\hspace{.5cm}n\hspace{.5cm}n\\ \hline
+     S5 & S5\hspace{.5cm}S5\hspace{.5cm}S5\hspace{.5cm}S0\hspace{.5cm}S0\hspace{.5cm}&5c\hspace{.5cm}10c\hspace{.5cm}25c\hspace{.5cm}S\hspace{.5cm}P\\ \hline
+   \end{tabular}
+ \end{center}}
+ \\
+9.- La máquina M tiene f= [0, 1] = 0 y se determina mediante el diagrama de estados.\\
+a) Describa con palabras lo que hace esta máquina de estados finitos\\ 
+b) ¿Qué debe recordar el estado s1?\\
+c) Encuentre dos lenguajes A, B  f* tales que para cada x  AB, w(s0, x) tiene a 1 como un sufijo\\
+\textcolor{red}{Respuesta: a) Reorganiza (Con una salida de 1) todos los 0 que le preceden de otro 0} \\
+10.- a. Si s, f y o son conjuntos finitos, con $|S| = 3 |f| = 5, y |0| = 2$ , determine:\\
+a)\\
+i) $|S x f|$\\
+ii)El número de funciones v: S x f -> S\\
+iii) El número de funciones w: s x O -> O\\
+b)\\
+Para S, F y O de la parte (a), ¿Cuántas máquinas de estados finitos determinan?\\
+\textcolor{red}{Respuesta:\\
+\[
+(a) i) 15\hspace{1cm}	ii)3^{15}\hspace{1cm}	iii) 2^{15} \hspace{1cm}		(b)6^{15}
+\]}
+\end{document}
